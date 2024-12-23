@@ -1,0 +1,17 @@
+.testimonials-carousel .carousel .control-dots {
+  bottom: -2px;
+  text-align: center; /* Adjust this value to position the indicators */
+}
+
+.testimonials-carousel .carousel .control-dots .dot {
+  background-color: rgb(218, 214, 214); /* Change the default color */
+  width: 12px; /* Adjust the size */
+  height: 12px; /* Adjust the size */
+  margin: 0 5px; /* Adjust the spacing */
+  opacity: 1;
+}
+
+.testimonials-carousel .carousel .control-dots .dot.selected,
+.testimonials-carousel .carousel .control-dots .dot:hover {
+  background-color: #007bff; /* Change the color for the selected indicator */
+}
