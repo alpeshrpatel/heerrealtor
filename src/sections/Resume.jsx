@@ -61,7 +61,7 @@ const experience = [
 const Resume = () => {
 
   return (
-    <div className='container width-[100vw]  flex items-center justify-center' id='resume'>
+    <div className=' width-[100vw]  flex items-center justify-center px-24' id='resume'>
        <div className="mb-8 p-5">
             <SectionTitle title='Resume' />
             <p className="mt-4 text-base text-gray-700">
@@ -76,8 +76,8 @@ const Resume = () => {
                     <ul className="relative">
                         {summary.map((item, index) => (
                             <li key={index} className="mb-8 pl-8" >
-                                <span className="absolute left-0 top-1.8 w-4 h-4 border-2 border-[#0563bb] rounded-full"></span>
-                                <span className="absolute left-1.5 top-3.5 w-[1.9px] h-full bg-[#0563bb]"></span>
+                                <span className="absolute left-0 top-1.8 w-4 h-4 border-2 border-[#03233F] rounded-full"></span>
+                                <span className="absolute left-1.5 top-3.5 w-[1.9px] h-full bg-[#03233F]"></span>
                                 <h3 className="text-lg mb-2 text-gray-600 font-bold font-raleway">{item.title}</h3>
                                 <p className="mb-2 font-robotoItalic text-black font-thin">{item.description}</p>
                                 <ul className="list-disc ml-4">
@@ -95,8 +95,8 @@ const Resume = () => {
                     <ul className="relative">
                         {education.map((item, index) => (
                             <li key={index} className="mb-8 pl-8 relative" >
-                                <span className="absolute left-0 top-1.8 w-4 h-4 border-2 border-[#0563bb] rounded-full"></span>
-                                <span className="absolute left-1.5 top-3.5 w-[1.9px] h-full bg-[#0563bb]"></span>
+                                <span className="absolute left-0 top-1.8 w-4 h-4 border-2 border-[#03233F] rounded-full"></span>
+                                <span className="absolute left-1.5 top-3.5 w-[1.9px] h-full bg-[#03233F]"></span>
                                 <h3 className="text-lg mb-2 font-raleway text-gray-600 font-bold">{item.title}</h3>
                                 <p className="mb-2 font-raleway text-black font-bold">{item.years}</p>
                                 <h4 className="text-base font-robotoItalic mb-5">{item.company}</h4>
@@ -117,8 +117,8 @@ const Resume = () => {
                     <ul className="relative ">
                         {experience.map((exp, index) => (
                             <li key={index} className="mb-8 pl-8 relative" >
-                                <span className="absolute left-0 top-1.8 w-4 h-4 border-2 border-[#0563bb] rounded-full"></span>
-                                <span className="absolute left-1.5 top-3.5 w-0.5 h-full bg-[#0563bb]"></span>
+                                <span className="absolute left-0 top-1.8 w-4 h-4 border-2 border-[#03233F] rounded-full"></span>
+                                <span className="absolute left-1.5 top-3.5 w-0.5 h-full bg-[#03233F]"></span>
                                 <h3 className="text-lg mb-2 font-raleway text-gray-600 font-bold">{exp.title}</h3>
                                 <p className="mb-2 mt-2 font-raleway text-black font-bold">{exp.years}</p>
                                 <h4 className="text-base font-robotoItalic mt-5 mb-5">{exp.company}</h4>

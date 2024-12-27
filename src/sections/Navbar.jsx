@@ -1,26 +1,24 @@
 import React, { useState } from "react";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
+const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick}) => {
+  
 
   return (
     <>
-      <nav className="bg-[#0563bb] text-white fixed w-full z-50 shadow-lg">
+      <nav className="bg-[#03233F] text-white fixed w-full z-50 shadow-lg">
         <div className="container mx-auto flex justify-between items-center py-2 px-6">
           <div>
             <img
-              src="./logo.webp"
+              src="./logo4.png"
               alt="logo"
-              height="100"
-              width="100"
+              height="200"
+              width="200"
               className="rounded-full"
             />
-            <div className="text-lg font-bold">Realtor Hiral</div>
+            {/* <div className="text-lg font-bold">Heer Realtor </div> */}
           </div>
 
-          {/* <div className="md:hidden flex items-center" onClick={toggleMenu}>
+          <div className="md:hidden flex items-center" onClick={handleBurgerClick}>
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,16 +35,16 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-          </div> */}
+          </div>
           <ul
             className={`flex space-x-6 md:flex ${
-              isOpen ? "block" : "hidden"
+              isSidebarOn ? "hidden" : "hidden"
             } md:block`}
           >
             <li>
               <a
                 href="#home"
-                className="hover:text-yellow-500 transition-colors duration-300"
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
               >
                 Home
               </a>
@@ -54,39 +52,40 @@ const Navbar = () => {
             <li>
               <a
                 href="#about"
-                className="hover:text-yellow-500 transition-colors duration-300"
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
               >
-                About
+                About Hiral
               </a>
             </li>
+            
             <li>
               <a
-                href="#resume"
-                className="hover:text-yellow-500 transition-colors duration-300"
+                href="#mission"
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
               >
-                Resume
+                Services
               </a>
             </li>
-            <li>
-              <a
-                href="#portfolio"
-                className="hover:text-yellow-500 transition-colors duration-300"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li>
+            {/* <li>
               <a
                 href="#services"
                 className="hover:text-yellow-500 transition-colors duration-300"
               >
                 Services
               </a>
+            </li> */}
+            <li>
+              <a
+                href="#testimonials"
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
+              >
+                Testimonials
+              </a>
             </li>
             <li>
               <a
                 href="#contact"
-                className="hover:text-yellow-500 transition-colors duration-300"
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
               >
                 Contact
               </a>

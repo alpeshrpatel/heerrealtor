@@ -99,7 +99,7 @@ const Services = () => {
   };
 
   return (
-    <div className="container width-full mt-12 px-16 " id="services">
+    <div className="container width-full mt-12 px-16 " id='testimonials'>
       <h3 className="mx-auto w-full mt-4 text-center text-blue-400 text-3xl font-semibold">
       What are you looking for?
       </h3>
@@ -124,7 +124,7 @@ const Services = () => {
       </div>
     ))}
         </div>
-        <div className="container width-full mt-12 px-16  ">
+        <div  className="container width-full mt-12  sm:px-4  lg:px-16 ">
           <SectionTitle title="Testimonials" />
           <p className="mx-auto w-full mt-4 text-center">
             Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
@@ -146,7 +146,7 @@ const Services = () => {
                   className="testimonial-item flex flex-col lg:flex-row items-center justify-center w-full pb-20  "
                 >
                   <div className="testimonial-content bg-white px-6 py-4 rounded-lg  max-w-md mx-auto relative">
-                    <div className=" absolute left-0 top-0 bottom-0 w-[2px] bg-[#0563bb]"></div>
+                    <div className=" absolute left-0 top-0 bottom-0 w-[2px] bg-[#03233F]"></div>
                     <p className="text-gray-700 text-start font-roboto text-[16px] ">
                       <RiDoubleQuotesL className="text-sky-400 " />
                       {testimonial.message}{" "}

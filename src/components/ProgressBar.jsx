@@ -20,7 +20,7 @@ const ProgressBar = () => {
             </div>
             <div className="w-full bg-gray-300 h-2.5" >
               <div
-                className="bg-[#0563bb] h-full"
+                className="bg-[#03233F] h-full"
                 style={{ width: `${skill.percentage}%`, transition: 'width 1s ease' }}
               ></div>
             </div>

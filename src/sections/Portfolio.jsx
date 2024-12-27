@@ -159,7 +159,7 @@ const Portfolio = () => {
               key={link}
               onClick={() => setActiveLink(link)}
               className={`text-sm bg-transparent border-none cursor-pointer ${
-                activeLink === link ? "text-[#0563bb]" : "text-gray-800"
+                activeLink === link ? "text-[#03233F]" : "text-gray-800"
               }`}
             >
               {link}

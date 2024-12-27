@@ -5,38 +5,37 @@ import ProgressBar from "../components/ProgressBar";
 
 const About = () => {
   return (
-    <div
-      className="container width-full mt-12 px-16 "
-      id="about"
-    >
-      <SectionTitle title='About'/>
+    <div className=" width-full mt-12 place-content-center " id="about">
+      <SectionTitle title="About" />
       <p className="mx-auto w-full mt-4 text-center">
-        Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-        aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-        quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-        sit in iste officiis commodi quidem hic quas.
+        Welcome! I'm HEER(Hiral) Patel, Your Arizona Real Estate Expert
       </p>
 
       <div className="flex w-[80vw] justify-center sm:flex-col lg:flex-row mt-12">
         <div className="flex flex-col lg:flex-row">
           <div className="basis-1/3 flex justify-center">
             <img
-              src="https://bootstrapmade.com/demo/templates/MyResume/assets/img/profile-img.jpg"
+              src="/hiralphoto.png"
               alt=""
-              className="h-[65vh] w-[65vw] lg:h-[55vh] lg:w-[55vw] justify-center"
+              className="h-[65vh] w-[65vw] lg:h-[55vh] lg:w-[24vw] justify-center"
             />
           </div>
 
           <div className="basis-2/3 flex mt-4">
             <div className="flex flex-col">
               <p className="text-2xl ml-14  font-bold w-full ">
-                UI/UX Designer & Web Developer.
+                Region Real Estate Expert
               </p>
               <p className="w-full mt-4 ml-14">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                I'm excited to be your go-to resource for navigating the vibrant
+                and diverse Arizona real estate market. I've had the privilege
+                of helping countless clients turn their dreams into reality.
+                Whether you're a first-time homebuyer navigating the vibrant
+                neighborhoods of Phoenix, seeking a peaceful retreat in Sedona,
+                or investing in the growing communities across the Valley of the
+                Sun, I'm here to guide you every step of the way. 
               </p>
-              <ul className="list-none w-full mt-4 ml-14 flex sm:flex-col lg:flex-row lg:gap-48">
+              {/* <ul className="list-none w-full mt-4 ml-14 flex sm:flex-col lg:flex-row lg:gap-48">
                 <div>
                   <li className="flex items-center mt-4">
                     <IoChevronForwardSharp className="mr-2" />
@@ -99,13 +98,14 @@ const About = () => {
                     </span>
                   </li>
                 </div>
-              </ul>
+              </ul> */}
               <p className="w-full mt-8 ml-14 ">
-                Officiis eligendi itaque labore et dolorum mollitia officiis
-                optio vero. Quisquam sunt adipisci omnis et ut. Nulla
-                accusantium dolor incidunt officia tempore. Et eius omnis.
-                Cupiditate ut dicta maxime officiis quidem quia. Sed et
-                consectetur qui quia repellendus itaque neque.
+              As a proud
+                Arizona local, I bring unparalleled knowledge of the state's
+                diverse communities, from the urban energy of Scottsdale to the
+                serene desert landscapes. My approach is simple: deliver
+                exceptional service, build genuine relationships, and provide
+                tailored solutions to meet your unique needs.
               </p>
             </div>
           </div>
@@ -113,7 +113,7 @@ const About = () => {
       </div>
       <div className="flex sm:flex-col lg:flex-row mt-36 mb-28 gap-8 lg:justify-evenly ">
         <span className="flex justify-center items-center flex-col gap-2">
-          <div className="rounded-full bg-[#0563bb]  w-[54px] h-[54px] text-white flex justify-center items-center">
+          <div className="rounded-full bg-[#03233F]  w-[54px] h-[54px] text-white flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -130,7 +130,7 @@ const About = () => {
           <p>Happy Clients</p>
         </span>
         <span className="flex justify-center items-center flex-col gap-2">
-          <div className="rounded-full bg-[#0563bb]  w-[54px] h-[54px] text-white flex justify-center items-center">
+          <div className="rounded-full bg-[#03233F]  w-[54px] h-[54px] text-white flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -148,7 +148,7 @@ const About = () => {
           <p>Projects</p>
         </span>
         <span className="flex justify-center items-center flex-col gap-2">
-          <div className="rounded-full bg-[#0563bb]  w-[54px] h-[54px] text-white flex justify-center items-center">
+          <div className="rounded-full bg-[#03233F]  w-[54px] h-[54px] text-white flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -164,7 +164,7 @@ const About = () => {
           <p>Hours Of Support</p>
         </span>
         <span className="flex justify-center items-center flex-col gap-2">
-          <div className="rounded-full bg-[#0563bb]  w-[54px] h-[54px] text-white flex justify-center items-center">
+          <div className="rounded-full bg-[#03233F]  w-[54px] h-[54px] text-white flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -180,9 +180,12 @@ const About = () => {
           <p>Hard Workers</p>
         </span>
       </div>
-      <SectionTitle  title = 'Skills'/>
-      <p className="mx-auto w-full mt-4 text-center ">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      <ProgressBar/>
+      {/* <SectionTitle title="Skills" />
+      <p className="mx-auto w-full mt-4 text-center ">
+        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+        consectetur velit
+      </p>
+      <ProgressBar /> */}
     </div>
   );
 };
