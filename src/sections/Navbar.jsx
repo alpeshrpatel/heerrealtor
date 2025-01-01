@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick}) => {
+const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen}) => {
   
 
   return (
@@ -81,6 +81,15 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick}) => {
               >
                 Testimonials
               </a>
+            </li>
+            <li>
+              <button
+                
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Mortgage Calculator
+              </button>
             </li>
             <li>
               <a

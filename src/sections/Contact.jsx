@@ -30,7 +30,7 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold">Address</h3>
                 <p className="text-gray-600">
-                  A108 Adam Street, New York, NY 535022
+                1774 E SAN CARLOS PL , CHANDLER, AZ - 85249
                 </p>
               </div>
             </div>
@@ -43,7 +43,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Call Us</h3>
-                <p className="text-gray-600">+1 5589 55488 55</p>
+                <p className="text-gray-600">+1  480-310-9980</p>
               </div>
             </div>
             <div
@@ -55,7 +55,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="text-lg font-semibold">Email Us</h3>
-                <p className="text-gray-600">info@example.com</p>
+                <p className="text-gray-600">realtor.heer.p@gmail.com</p>
               </div>
             </div>
            

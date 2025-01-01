@@ -26,36 +26,42 @@ import { RiDoubleQuotesR } from "react-icons/ri";
 const testimonials = [
   {
     message:
-      "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.",
-    name: "Saul Goodman",
+      "As a first-time homebuyer, I had an exceptional experience working with Heer Patel on the purchase of my primary home. From the beginning, they demonstrated extensive knowledge of the local market, providing valuable insights into neighborhoods, property features, and potential future value.Heer was consistently professional, responsive, and patient, addressing all my questions and concerns with great care. Their expertise in negotiations ensured that I secured the best possible deal on my dream home.",
+    name: "Kalpesh Patel",
     photo:
-      "https://bootstrapmade.com/demo/templates/MyResume/assets/img/testimonials/testimonials-1.jpg",
-    position: "CEO & Founder",
+      "/testimonial1.png",
+    position: "",
   },
   {
     message:
-      "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.",
-    name: "Sara Wilson",
+      "I had the pleasure of working with Hiral Patel while buying my single-family home in Gilbert, AZ, and I couldn't be more satisfied with the experience. From the very beginning, Hiral demonstrated exceptional professionalism, knowledge of the local market, and a genuine commitment to helping me find the perfect home.Throughout the entire process, Hiral was incredibly responsive, always ready to answer questions and offer valuable insights. She took the time to truly understand my needs and preferences, ensuring that every property we viewed was in line with what I was looking for. She was patient, understanding, and never pressured me into making a decision, allowing me to make a confident choice when I finally found the right home.What stood out most was Hiral’s attention to detail and her ability to handle all the logistics seamlessly. She guided me through every step of the process, from the initial search to the closing day, and ensured everything was handled efficiently.Thanks to Hiral, I am now the proud owner of a beautiful home in Gilbert, and I couldn’t be happier with the entire experience. I highly recommend her to anyone looking for a knowledgeable, reliable, and dedicated realtor!Thank you, Hiral, for making this such a smooth and enjoyable journey!",
+    name: "Neel Maniar",
     photo:
-      "https://bootstrapmade.com/demo/templates/MyResume/assets/img/testimonials/testimonials-2.jpg",
-    position: "Designer",
+      "/testimonial2.png",
+    position: "",
   },
   {
     message:
-      "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.",
-    name: "Jena Karlis",
+      "Heer Patel has helped me purchase a family and rental property. She is very professional and knowledgeable, understanding her work thoroughly. She is available at your convenience to discuss matters and comes up with a plan that meets your house requirements, scheduling house tours efficiently. My relationship with her doesn't end here; she will help me buy more rental properties. I highly recommend her to my friends and family and truly appreciate the work she has done for me.",
+    name: "Mehul Patel",
     photo:
-      "https://bootstrapmade.com/demo/templates/MyResume/assets/img/testimonials/testimonials-3.jpg",
-    position: "Store Owner",
+      "/OIP.jpg",
+    position: "",
   },
   {
     message:
-      "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.",
-    name: "John Larson",
+      "I had a fantastic experience with Hiralben.In this competitive market, she not only secured me a great deal but also guided me through the entire process with exceptional intuition and expertise. I highly recommend her services to anyone looking to buy a home!",
+    name: "Nilesh Padhi",
     photo:
-      "https://bootstrapmade.com/demo/templates/MyResume/assets/img/testimonials/testimonials-4.jpg",
-    position: "Entrepreneur",
+      "/OIP.jpg",
+    position: "",
   },
+  {
+    message: "Heer has an excellent knowledge of real estate and she was extremely easy to contact!!!  There were almost 1 year waiting for new construction homes and others home has lottery system. She showed me Mosaic at Layton Lakes new construction home with ready to build without waiting or lottery. Her real estate knowledge also saved me from some terrible decisions. There are several negative selling points to homes that you don't notice until someone with real estate experience points them out! When you are only viewing a home for 15-30 minutes you need someone with her real estate knowledge and experience to look out for you. Buying a home is a significant investment and Heer will take the time to show you every house until you find the home you love!  I would definitely recommend Heer to anyone, not only is she pleasant to work with and easy to contact but she made sure I made a good investment I wouldn't regret!",
+    name:'Rushit Mehta',
+    photo:'./testimonial5.png',
+    position:''
+  }
 ];
 
 const services = [
@@ -145,14 +151,14 @@ const Services = () => {
                   key={index}
                   className="testimonial-item flex flex-col lg:flex-row items-center justify-center w-full pb-20  "
                 >
-                  <div className="testimonial-content bg-white px-6 py-4 rounded-lg  max-w-md mx-auto relative">
+                  <div className="testimonial-content bg-white px-6 py-4 rounded-lg  max-w-md max-h-[450px] overflow-y-auto mx-auto relative">
                     <div className=" absolute left-0 top-0 bottom-0 w-[2px] bg-[#03233F]"></div>
                     <p className="text-gray-700 text-start font-roboto text-[16px] ">
                       <RiDoubleQuotesL className="text-sky-400 " />
                       {testimonial.message}{" "}
                       <RiDoubleQuotesR className="text-sky-400" />
                     </p>
-                    <p className="text-xl font-semibold mt-2 font-raleway text-black text-start">
+                    <p className="text-xl font-semibold mt-2 font-raleway text-black text-start ">
                       {testimonial.name}
                     </p>
                     <p className="text-sm text-gray-400 text-start">
