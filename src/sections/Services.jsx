@@ -133,8 +133,7 @@ const Services = () => {
         <div  className="container width-full mt-12  sm:px-4  lg:px-16 ">
           <SectionTitle title="Testimonials" />
           <p className="mx-auto w-full mt-4 text-center">
-            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-            consectetur velit
+          Don't just take our word for it - hear from the countless families who trusted us to help them find their perfect home and turned their real estate dreams into reality.
           </p>
           <div className="">
             <Carousel
@@ -149,9 +148,9 @@ const Services = () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="testimonial-item flex flex-col lg:flex-row items-center justify-center w-full pb-20  "
+                  className="testimonial-item flex flex-col lg:flex-row items-center justify-center w-full pb-20 gap-4 mt-4 "
                 >
-                  <div className="testimonial-content bg-white px-6 py-4 rounded-lg  max-w-md max-h-[450px] overflow-y-auto mx-auto relative">
+                  <div className="testimonial-content bg-white px-6 md:px-12 py-4 rounded-lg  w-[60vw] md:max-w-xl max-h-[450px] overflow-y-auto mx-auto relative">
                     <div className=" absolute left-0 top-0 bottom-0 w-[2px] bg-[#03233F]"></div>
                     <p className="text-gray-700 text-start font-roboto text-[16px] ">
                       <RiDoubleQuotesL className="text-sky-400 " />

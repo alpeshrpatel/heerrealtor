@@ -11,6 +11,7 @@ import BurgerIcon from "./components/BurgerIcon";
 import Navbar from "./sections/Navbar";
 import MissionVision from "./sections/MissionVision";
 import MortgageCalculatorWidget from "./sections/MortgageCalculatorWidget";
+import MortgageCalculator from "./sections/MorgageCalculator";
 
 
 
@@ -75,17 +76,19 @@ function App() {
 
         {/* Modal */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-            <div className="bg-white w-full max-w-md mx-auto p-6 rounded-lg shadow-lg relative">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-100 overflow-y-auto">
+            <div className="bg-white w-full max-w-3xl mx-auto p-6 rounded-lg shadow-lg relative mt-56 ">
               <button
                 className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                 onClick={closeModal}
               >
                 ✖
               </button>
-              <h2 className="text-xl font-semibold mb-4">Mortgage Calculator</h2>
-              <div className="flex justify-center">
-              <MortgageCalculatorWidget isModalOpen={isModalOpen}/>
+              {/* <h2 className="text-xl font-semibold mb-4">Mortgage Calculator</h2> */}
+              <div className="w-full mt-[40vh] md:mt-4 z-10">
+              
+              <MortgageCalculator isModalOpen={isModalOpen} closeModal={closeModal}/>
+              
               </div>
               
             </div>

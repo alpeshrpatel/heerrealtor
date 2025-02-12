@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import SectionTitle from "../components/SectionTitle";
 
 const Contact = () => {
+  const [email,setEmail] = useState('');
+
+  const handleSend = async () => {
+    
+    try {
+        const res = await fetch("http://localhost:3000/api/sendemail/getintouch/heerrealtor", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email }),
+        });
+  
+        if (!res.ok) {
+          throw new Error(`Email Subscription Failed: ${res.status} - ${res.statusText}`);
+        }
+  
+        const result = await res.json();
+  
+        if (res.status === 200) {
+          alert("success", "Subscribed!");
+        }
+      
+    } catch (error) {
+      console.error("Subscription Error:", error);
+      alert(error);
+    }
+    
+  }
   return (
     <div
       id="contact"
@@ -92,6 +121,8 @@ const Contact = () => {
                   type="email"
                   id="email"
                   className="w-full p-2 border border-gray-300"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
@@ -123,8 +154,9 @@ const Contact = () => {
              
             >
               <button
-                type="submit"
+                // type="submit"
                 className="bg-blue-500 rounded-full text-white py-2 px-4 hover:bg-blue-600"
+                onClick={handleSend}
               >
                 Send Message
               </button>

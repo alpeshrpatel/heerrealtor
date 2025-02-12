@@ -142,14 +142,11 @@ const Portfolio = () => {
       <div className="container width-full mt-12 px-16 ">
         <SectionTitle title="Explore Our Featured Areas" />
         <p className="mx-auto w-full mt-4 text-center">
-          Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
-          aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
-          quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia
-          fugiat sit in iste officiis commodi quidem hic quas.
+        Discover your dream home in our handpicked selection of exceptional properties, where luxury meets lifestyle in the most sought-after locations.
         </p>
       </div>
       <div className="mt-16">
-        <nav
+        {/* <nav
           className="flex justify-center flex-wrap gap-2 mb-8"
           data-sal="slide-up"
           data-sal-duration="1000"
@@ -165,7 +162,7 @@ const Portfolio = () => {
               {link}
             </button>
           ))}
-        </nav>
+        </nav> */}
         <div className="columns-1 lg:columns-3 gap-4">
           {filteredData.map((item, index) => (
             <div key={item.id} className="relative mb-4">
@@ -183,7 +180,7 @@ const Portfolio = () => {
                     <p className="text-sm ">{item.description}</p>
                   </div>
                   <div className="absolute flex justify-end gap-4 basis-1/2 invisible bottom-0 right-0 w-[50%] h-24 p-2 text-gray-700 bg-white   group-hover:visible transition-all ease-in-out duration-500">
-                    <button
+                    {/* <button
                       className=""
                       onClick={() => handleZoomInClick(item, index)}
                     >
@@ -192,13 +189,13 @@ const Portfolio = () => {
                         alt="Zoom In"
                         className="w-6 h-6"
                       />
-                    </button>
-                    <button
+                    </button> */}
+                    {/* <button
                       className=""
                       onClick={() => handleLinkClick(item.name)}
                     >
                       <img alt="Link" className="w-6 h-6" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -234,7 +231,7 @@ const Portfolio = () => {
               className="max-w-[100%] max-h-[calc(100vh-85px)] mx-auto transition-transform duration-300"
             />
             <p className="text-lg text-left w-full p-6 py-7 bg-white">
-              {selectedImage.name}
+              {selectedImage.name}    
             </p>
           </div>
         </div>

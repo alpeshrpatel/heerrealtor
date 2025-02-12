@@ -17,7 +17,7 @@ const About = () => {
             <img
               src="/hiralphoto.png"
               alt=""
-              className="h-[65vh] w-[65vw] lg:h-[55vh] lg:w-[24vw] justify-center"
+              className="h-auto w-[60vw] md:h-auto md:w-[50vw] lg:h-auto lg:w-[20vw] justify-center ml-20"
             />
           </div>
 

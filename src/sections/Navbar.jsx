@@ -5,7 +5,7 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
 
   return (
     <>
-      <nav className="bg-[#03233F] text-white fixed w-full z-50 shadow-lg">
+      <nav className="bg-[#03233F] text-white fixed w-full z-50 shadow-lg h-32">
         <div className="container mx-auto flex justify-between items-center py-2 px-6">
           <div>
             <img
@@ -13,7 +13,7 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
               alt="logo"
               height="200"
               width="200"
-              className="rounded-full"
+              className="rounded-full h-28 w-52"
             />
             {/* <div className="text-lg font-bold">Heer Realtor </div> */}
           </div>
