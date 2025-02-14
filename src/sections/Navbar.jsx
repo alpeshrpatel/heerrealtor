@@ -5,7 +5,7 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
 
   return (
     <>
-      <nav className="bg-[#03233F] text-white fixed w-full z-50 shadow-lg h-32">
+      <nav className="bg-[#03233F] text-white fixed w-full z-10 shadow-lg h-32">
         <div className="container mx-auto flex justify-between items-center py-2 px-6">
           <div>
             <img
@@ -94,9 +94,9 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
             <li>
               <a
                 href="#contact"
-                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl bg-[#d4d5e0] px-3 pt-3 pb-4 rounded-xl text-[#03233F] font-semibold "
               >
-                Contact
+                Contact us
               </a>
             </li>
           </ul>

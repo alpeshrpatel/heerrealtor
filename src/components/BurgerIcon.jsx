@@ -25,7 +25,7 @@ const BurgerIcon = () => {
       </div>
 
       {isOpen ? (
-        <div className="fixed left-2  h-screen flex justify-center top-[25vh] z-20 ">
+        <div className="fixed left-2  h-screen flex justify-center top-[25vh] z-50 ">
           <Sidebar />
         </div>
       ) : (

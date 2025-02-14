@@ -105,22 +105,22 @@ const Services = () => {
   };
 
   return (
-    <div className="container width-full mt-12 px-16 " id='testimonials'>
+    <div className="container width-full mt-12 px-16 z-0" id='testimonials'>
       <h3 className="mx-auto w-full mt-4 text-center text-blue-400 text-3xl font-semibold">
       What are you looking for?
       </h3>
       <p className="text-center mt-2 mb-4">We provide full service at every step</p>
       <SectionTitle title="Services" />
       
-      <div className="mb-8 p-5">
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8 mb-8">
+      <div className="mb-8 p-5 z-0">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8 mb-8 z-0">
         {services.map((service, index) => (
       <div
         key={index}
-        className="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-100 hover:shadow-2xl"
+        className="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-100 hover:shadow-2xl z-0"
         onClick={handleServiceClick}
       >
-        <div className="flex items-center justify-center h-24 w-24 mb-4">
+        <div className="flex items-center justify-center h-24 w-24 mb-4 z-0">
           <CustomSVG svg={service.svg} ></CustomSVG>
         </div>
         <h3 className="text-xl font-bold mb-2 font-raleway text-center">

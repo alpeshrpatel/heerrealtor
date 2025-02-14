@@ -9,10 +9,10 @@ import Envelope from "../assets/Envelope";
 const Sidebar = ({ setIsSidebarOn,setIsModalOpen }) => {
   return (
     <div
-      className="fixed left-2  w-[200px] h-screen bg-fixed bg-cover bg-center    "
-      style={{ zIndex: 2147483647 }}
+      className="fixed left-2  w-[200px] h-screen bg-fixed bg-cover bg-center z-50 "
+      // style={{ zIndex: 2147483647 }}
     >
-      <ul className="flex flex-col gap-2 text-lg">
+      <ul className="flex flex-col gap-2 text-lg z-50">
         {/* <li className=" group flex justify-center items-center gap-1 lg:w-20 lg:h-20 w-20 h-20 lg:group-hover:py-4 lg:group-hover:px-10 py-4 px-10 rounded-full  bg-blue-700 ">
          
           <a href="#home" className="flex items-center gap-1"> <HouseIcon/> <span className=" lg:hidden lg:group-hover:inline">Home</span>  </a>

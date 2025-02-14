@@ -21,10 +21,12 @@ function App() {
 
   const openModal = () => {
     setIsModalOpen(true);
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
+    document.body.style.overflow = "auto";
   };
   const handleBurgerClick = () => {
     setIsSidebarOn((prev) => !prev);
@@ -39,13 +41,13 @@ function App() {
             <BurgerIcon />
           </div> */}
           {isSidebarOn && (
-            <div className=" lg:block absolute lg:relative left-2 top-[25vh] w-full h-screen " style={{ zIndex: 2147483647 }}>
+            <div className=" lg:block absolute lg:relative left-2 top-[25vh] w-full h-screen z-50" >
               <Sidebar setIsSidebarOn={setIsSidebarOn} setIsModalOpen={setIsModalOpen}/>
             </div>
           )}
         </div>
 
-        <div className="flex flex-col items-center w-full  z-10 mt-20 bg-gray-100">
+        <div className="flex flex-col items-center w-full mt-20 bg-gray-100">
           <section className="w-[100vw] flex justify-center">
             <Home />
           </section>
@@ -58,10 +60,10 @@ function App() {
           <section className="w-[100vw] flex justify-center">
             <Portfolio />
           </section>
-          <section className="w-[100vw] flex justify-center">
+          <section className="w-[100vw] flex justify-center z-0">
             <MissionVision />
           </section>
-          <section className="w-[100vw] flex justify-center ">
+          <section className="w-[100vw] flex justify-center z-0">
             <Services />
           </section>
           <section className="w-[100vw] flex justify-center">
@@ -76,8 +78,8 @@ function App() {
 
         {/* Modal */}
         {isModalOpen && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-100 overflow-y-auto">
-            <div className="bg-white w-full max-w-3xl mx-auto p-6 rounded-lg shadow-lg relative mt-56 ">
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 overflow-y-auto">
+            <div className="bg-white w-full max-w-3xl mx-auto p-6 rounded-lg shadow-lg relative mt-24 ">
               <button
                 className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
                 onClick={closeModal}
@@ -85,7 +87,7 @@ function App() {
                 ✖
               </button>
               {/* <h2 className="text-xl font-semibold mb-4">Mortgage Calculator</h2> */}
-              <div className="w-full mt-[40vh] md:mt-4 z-10">
+              <div className="w-full mt-[30vh] md:mt-2 lg:mt-2 " style={{zIndex:'100'}}>
               
               <MortgageCalculator isModalOpen={isModalOpen} closeModal={closeModal}/>
               

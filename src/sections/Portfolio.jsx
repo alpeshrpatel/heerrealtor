@@ -137,7 +137,7 @@ const Portfolio = () => {
   return (
     <div
       id="portfolio"
-      className="container width-[100vw]  flex items-center justify-center flex-col"
+      className="container width-[100vw]  flex items-center justify-center flex-col z-0"
     >
       <div className="container width-full mt-12 px-16 ">
         <SectionTitle title="Explore Our Featured Areas" />
@@ -165,8 +165,8 @@ const Portfolio = () => {
         </nav> */}
         <div className="columns-1 lg:columns-3 gap-4">
           {filteredData.map((item, index) => (
-            <div key={item.id} className="relative mb-4">
-              <div className="border bg-white shadow overflow-hidden group ">
+            <div key={item.id} className="relative mb-4 z-0">
+              <div className="border bg-white shadow overflow-hidden group z-0">
                 <div className="overflow-hidden">
                   <img
                     src={item.image}
@@ -205,7 +205,7 @@ const Portfolio = () => {
         </div>
       </div>
       {isModalOpen && selectedImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+        <div className="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-75">
           <button
             className="absolute top-2 right-4 text-gray-400 text-5xl  rounded-full"
             onClick={() => setIsModalOpen(false)}

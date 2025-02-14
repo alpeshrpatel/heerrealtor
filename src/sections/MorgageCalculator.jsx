@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
-const MortgageCalculator = ({ isModalOpen,closeModal }) => {
+const MortgageCalculator = ({ isModalOpen, closeModal }) => {
   const [propertyPrice, setPropertyPrice] = useState(350000);
   const [downPayment, setDownPayment] = useState(10500);
   const [interestRate, setInterestRate] = useState(6.5);
   const [loanTerm, setLoanTerm] = useState(30);
+  const [taxesAndHOA, setTaxesAndHOA] = useState(350)
+  const [hazardInsurance, setHazardInsurance] = useState(160)
+  const [mortgageInsurance, setMortgageInsurance] = useState(297)
 
   const COLORS = ["#0088FE", "#FFBB28", "#00C49F", "#FF8042"];
 
@@ -18,37 +21,50 @@ const MortgageCalculator = ({ isModalOpen,closeModal }) => {
       (principal * monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) /
       (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
 
-    const taxesAndHOA = 350;
-    const hazardInsurance = 160.42;
-    const mortgageInsurance = 297.06;
-
+    // const taxesAndHOA = 350;
+    // const hazardInsurance = 160.42;
+    // const mortgageInsurance = 297.06;
+    // ((downPayment / propertyPrice) * 100).toFixed(1)
     return {
       principal: monthlyPayment,
-      taxesAndHOA,
-      hazardInsurance,
-      mortgageInsurance,
-      total: monthlyPayment + taxesAndHOA + hazardInsurance + mortgageInsurance,
+      total: Number(monthlyPayment) + Number(taxesAndHOA) + Number(hazardInsurance) + Number(mortgageInsurance)
     };
   };
 
   const payments = calculateMonthlyPayment();
 
-  const pieData = [
-    { name: "Principal & Interest", value: payments.principal },
-    { name: "Taxes & HOA", value: payments.taxesAndHOA },
-    { name: "Hazard Insurance", value: payments.hazardInsurance },
-    { name: "Mortgage Insurance", value: payments.mortgageInsurance },
-  ];
+  const pieData = useMemo(() => [
+    { name: "Principal & Interest", value: Number(payments.principal) },
+    { name: "Taxes & HOA", value: Number(taxesAndHOA) },
+    { name: "Hazard Insurance", value: Number(hazardInsurance) },
+    { name: "Mortgage Insurance", value: Number(mortgageInsurance) },
+  ], [payments.principal, taxesAndHOA, hazardInsurance, mortgageInsurance]);
+
+  useEffect(() => {
+    if(((downPayment / propertyPrice) * 100).toFixed(1) > 20){
+      setMortgageInsurance(0)
+    }else{
+      setMortgageInsurance(297)
+    }
+  },[downPayment])
+
+  const handleInputChange = (setter) => (e) => {
+    const value = e.target.value === "" ? 0 : Number(e.target.value);
+    if (!isNaN(value)) {
+      setter(value);
+    }
+  };
+
 
   return (
     isModalOpen && (
-      <div className=" w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-4 mt-4 ">
+      <div className=" w-full max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-4 mt-2">
         <button
-                className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 visible md:invisible"
-                onClick={closeModal}
-              >
-                ✖
-              </button>
+          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 visible md:invisible"
+          onClick={closeModal}
+        >
+          ✖
+        </button>
         <div className="p-6 bg-gradient-to-r from-blue-500 to-blue-600 mb-4">
           <h1 className="text-xl md:text-2xl font-bold text-center text-white">
             Mortgage Calculator
@@ -167,25 +183,53 @@ const MortgageCalculator = ({ isModalOpen,closeModal }) => {
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-gray-600">Taxes & HOA:</span>
               <span className="font-medium text-gray-800">
-                ${payments.taxesAndHOA}
+                {/* <input type="number" value={taxesAndHOA}   onChange={handleInputChange(setTaxesAndHOA)} className='gap-4'/> */}
+                <div className='flex justify-start items-center gap-2'>
+                  <input
+                    type="number"
+                    value={taxesAndHOA} onChange={handleInputChange(setTaxesAndHOA)}
+                    className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-32 mr-2"
+                  />
+                  <span className="w-16 text-right">${taxesAndHOA}</span>
+                </div>
+
               </span>
             </div>
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-gray-600">Hazard Insurance:</span>
               <span className="font-medium text-gray-800">
-                ${payments.hazardInsurance}
+                {/* <input type="number" value={hazardInsurance} onChange={handleInputChange(setHazardInsurance)} className='gap-4'/> */}
+                <div className='flex justify-start items-center gap-2'>
+                  <input
+                    type="number"
+                    value={hazardInsurance} onChange={handleInputChange(setHazardInsurance)}
+                    className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-32 mr-2"
+                  />
+                   <span className="w-16 text-right">${hazardInsurance}</span>
+                  {/* ${hazardInsurance} */}
+                </div>
               </span>
             </div>
             <div className="flex justify-between items-center border-b pb-2">
               <span className="text-gray-600">Mortgage Insurance:</span>
               <span className="font-medium text-gray-800">
-                ${payments.mortgageInsurance}
+                {/* <input type="number" value={mortgageInsurance} onChange={handleInputChange(setMortgageInsurance)} className='gap-4'/> */}
+                <div className='flex justify-start items-center gap-2'>
+                  <input
+                    type="number"
+                    value={mortgageInsurance}
+                    onChange={handleInputChange(setMortgageInsurance)}
+                    className="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-32 mr-2"
+                  />
+                   <span className="w-16 text-right">${mortgageInsurance}</span>
+                  {/* ${mortgageInsurance} */}
+                </div>
               </span>
             </div>
             <div className="flex justify-between items-center pt-2 font-bold text-lg">
               <span className="text-gray-800">Total Monthly Payment:</span>
               <span className="text-gray-800">
-                ${payments.total.toFixed(2)}
+                ${payments?.total?.toFixed(2)}
               </span>
             </div>
           </div>

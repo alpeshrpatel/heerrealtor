@@ -38,10 +38,10 @@ const Contact = () => {
     >
       <div className="container width-full mt-12 px-16 ">
         <SectionTitle title="Contact" />
-        <p className="mx-auto w-full mt-4 text-center">
+        {/* <p className="mx-auto w-full mt-4 text-center">
           Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
           consectetur velit
-        </p>
+        </p> */}
       </div>
       <div className="flex flex-col lg:flex-row mt-10 space-y-4 lg:space-y-0 lg:space-x-4">
         <div
