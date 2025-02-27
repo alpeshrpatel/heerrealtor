@@ -46,13 +46,13 @@ const Home = () => {
               <RiTwitterXFill size={22} className="hover:text-blue-500" />
             </a> */}
             {/* fill="#676869" */}
-            <a href="https://www.facebook.com/heerrealty?mibextid=wwXIfr&rdid=YQ7UqA2WQire9TXx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18dfW5oDFt%2F%3Fmibextid%3DwwXIfr#" className="p-4">
+            <a href="https://www.facebook.com/heerrealty?mibextid=wwXIfr&rdid=YQ7UqA2WQire9TXx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18dfW5oDFt%2F%3Fmibextid%3DwwXIfr#" target="/_blank" className="p-4">
               <MdFacebook size={22} className="hover:text-blue-500" />
             </a>
-            <a href="https://www.instagram.com/heer_realtor?igsh=OGJkbnp2NThnbTZu&utm_source=qr" className="p-4">
+            <a href="https://www.instagram.com/heer_realtor?igsh=OGJkbnp2NThnbTZu&utm_source=qr" target="/_blank" className="p-4">
               <IoLogoInstagram size={22} className="hover:text-blue-500" />
             </a>
-            <a href="#" className="p-4">
+            <a href="https://www.linkedin.com/in/heer-realtor/" target="/_blank" className="p-4">
               <RiLinkedinBoxFill size={22} className="hover:text-blue-500" />
             </a>
           </div>
