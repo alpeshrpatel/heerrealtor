@@ -9,7 +9,7 @@ import Envelope from "../assets/Envelope";
 const Sidebar = ({ setIsSidebarOn,setIsModalOpen }) => {
   return (
     <div
-      className="fixed left-2  w-[200px] h-screen bg-fixed bg-cover bg-center z-50 "
+      className="fixed left-2  w-[200px] h-screen bg-fixed bg-cover bg-center z-20 "
       // style={{ zIndex: 2147483647 }}
     >
       <ul className="flex flex-col gap-2 text-lg z-50">

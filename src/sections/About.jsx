@@ -2,10 +2,18 @@ import React from "react";
 import { IoChevronForwardSharp } from "react-icons/io5";
 import SectionTitle from "../components/SectionTitle";
 import ProgressBar from "../components/ProgressBar";
+// import MetaComponent from "../components/MetaComponent";
 
+// const metadata = {
+//   title:
+//     "About Hiral Patel || Heer Realtor - Real Estate Expert in Arizona",
+//   description:
+//     "Find the perfect property with Hiral – specializing in luxury homes, investment properties, and first-time buyers in Arizona.",
+// };
 const About = () => {
   return (
     <div className=" width-full mt-12 place-content-center " id="about">
+    
       <SectionTitle title="About" />
       <p className="mx-auto w-full mt-4 text-center">
         Welcome! I'm HEER(Hiral) Patel, Your Arizona Real Estate Expert
@@ -13,7 +21,7 @@ const About = () => {
 
       <div className="flex w-[80vw] justify-center sm:flex-col lg:flex-row mt-12">
         <div className="flex flex-col lg:flex-row">
-          <div className="basis-1/3 flex justify-center">
+          <div className="basis-1/3 flex lg:hidden justify-center">
             <img
               src="/hiralphoto.png"
               alt=""
@@ -21,7 +29,7 @@ const About = () => {
             />
           </div>
 
-          <div className="basis-2/3 flex mt-4">
+          <div className="basis-2/3 flex mt-4 mx-0 lg:mx-auto">
             <div className="flex flex-col">
               <p className="text-2xl ml-14  font-bold w-full ">
                 Region Real Estate Expert
@@ -129,7 +137,7 @@ const About = () => {
           <h2 className="text-3xl font-bold">124</h2>
           <p>Happy Clients</p>
         </span>
-        <span className="flex justify-center items-center flex-col gap-2">
+        <span className="flex justify-center items-center flex-col gap-2 mx-auto md:mx-0">
           <div className="rounded-full bg-[#03233F]  w-[54px] h-[54px] text-white flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

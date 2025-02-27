@@ -4,10 +4,10 @@ import SectionTitle from "../components/SectionTitle";
 const Contact = () => {
   const [email,setEmail] = useState('');
 
-  const handleSend = async () => {
-    
+  const handleSend = async (e) => {
+    e.preventDefault()
     try {
-        const res = await fetch("http://localhost:3000/api/sendemail/getintouch/heerrealtor", {
+        const res = await fetch("/api/sendemail/getintouch/heerrealtor", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -27,7 +27,7 @@ const Contact = () => {
       
     } catch (error) {
       console.error("Subscription Error:", error);
-      alert(error);
+      // alert(error);
     }
     
   }
@@ -156,7 +156,7 @@ const Contact = () => {
               <button
                 // type="submit"
                 className="bg-blue-500 rounded-full text-white py-2 px-4 hover:bg-blue-600"
-                onClick={handleSend}
+                onClick={(e) => handleSend(e)}
               >
                 Send Message
               </button>

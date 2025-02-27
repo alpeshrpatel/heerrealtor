@@ -34,14 +34,14 @@ function App() {
 
   return (
     <>
-      <div className="relative min-h-screen w-full overflow-hidden sm:block lg:flex">
+      <div className="relative min-h-screen w-full overflow-hidden sm:block lg:flex z-20">
         <Navbar isSidebarOn={isSidebarOn} setIsSidebarOn={setIsSidebarOn} handleBurgerClick={handleBurgerClick} setIsModalOpen = {setIsModalOpen}/>
-        <div className="fixed w-[200px] h-screen bg-fixed bg-cover bg-center">
+        <div className="fixed w-[200px] h-screen bg-fixed bg-cover bg-center z-20">   
           {/* <div className="lg:hidden sm:block absolute " onClick={handleBurgerClick}>
             <BurgerIcon />
           </div> */}
           {isSidebarOn && (
-            <div className=" lg:block absolute lg:relative left-2 top-[25vh] w-full h-screen z-50" >
+            <div className=" lg:block absolute lg:relative left-2 top-[25vh] w-full h-screen z-20" >
               <Sidebar setIsSidebarOn={setIsSidebarOn} setIsModalOpen={setIsModalOpen}/>
             </div>
           )}

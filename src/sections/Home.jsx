@@ -9,10 +9,17 @@ const Home = () => {
   return (
     <div id="home" style={{ margin: 0, padding: 0 }}>
       <div className=" h-screen w-full relative flex items-center justify-center ">
+      <div className="basis-1/3 hidden lg:flex justify-center absolute left-10 z-10 ">
+            <img
+              src="/hiralphoto.png"
+              alt=""
+              className="h-auto w-[80vw] md:h-auto md:w-[50vw] lg:h-auto lg:w-[20vw] justify-center ml-20 rounded-md"
+            />
+        </div>
         <div className="opacity-25  h-screen">
           <img src="/home.jpg" alt="image" className="w-[100vw] h-full " />
         </div>
-        <div className="absolute flex flex-col z-10 left-[20vw]  ">
+        <div className="absolute flex flex-col z-10 left-[20vw] lg:left-[40vw]  ">
           <h2 className="text-3xl lg:text-6xl font-bold text-[#45505b] ">
             Welcome to HeerRealtor.com
           </h2>
@@ -35,14 +42,14 @@ const Home = () => {
           </div>
 
           <div className="flex flex-start">
-            <a href="#" className="p-4">
+            {/* <a href="#" className="p-4">
               <RiTwitterXFill size={22} className="hover:text-blue-500" />
-            </a>
+            </a> */}
             {/* fill="#676869" */}
-            <a href="#" className="p-4">
+            <a href="https://www.facebook.com/heerrealty?mibextid=wwXIfr&rdid=YQ7UqA2WQire9TXx&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18dfW5oDFt%2F%3Fmibextid%3DwwXIfr#" className="p-4">
               <MdFacebook size={22} className="hover:text-blue-500" />
             </a>
-            <a href="#" className="p-4">
+            <a href="https://www.instagram.com/heer_realtor?igsh=OGJkbnp2NThnbTZu&utm_source=qr" className="p-4">
               <IoLogoInstagram size={22} className="hover:text-blue-500" />
             </a>
             <a href="#" className="p-4">
