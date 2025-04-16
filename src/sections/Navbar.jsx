@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CalculatorsDropdown from "../components/calculators/CalculatorsDropdown";
 
 const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen}) => {
   
@@ -82,7 +83,7 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
                 Testimonials
               </a>
             </li>
-            <li>
+            {/* <li>
               <button
                 
                 className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
@@ -90,6 +91,18 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
               >
                 Mortgage Calculator
               </button>
+            </li> */}
+            <li>
+              <ul>
+                <CalculatorsDropdown />
+              </ul>
+              {/* <button
+                
+                className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
+                onClick={() => setIsModalOpen(true)}
+              >
+                Mortgage Calculator
+              </button> */}
             </li>
             <li>
               <a

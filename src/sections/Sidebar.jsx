@@ -1,7 +1,7 @@
 import React from "react";
 import HouseIcon from "../assets/HouseIcon";
 import Person from "../assets/Person";
-import FileEarmarkText from "../assets/FileEarmarkText";
+import { BsCalculatorFill } from "react-icons/bs";
 import Images from "../assets/Images";
 import HddStack from "../assets/HddStack";
 import Envelope from "../assets/Envelope";
@@ -60,9 +60,18 @@ const Sidebar = ({ setIsSidebarOn,setIsModalOpen }) => {
             className="flex items-center gap-1"
             onClick={() => setIsModalOpen(true)}
           >
-            <FileEarmarkText/>
+            {/* <FileEarmarkText/>
            <span className="lg:hidden lg:group-hover:inline">
               Mortgage Calculator
+            </span> */}
+            <span className="hidden lg:inline">
+          <BsCalculatorFill className='w-6 h-6 mr-1'/>
+            </span>
+           
+           <span className="lg:hidden lg:group-hover:inline">
+           <ul>
+                <CalculatorsDropdown />
+            </ul>
             </span>
           </button>
         </li>

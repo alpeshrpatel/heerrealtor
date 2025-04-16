@@ -69,12 +69,12 @@ function App() {
           <section className="w-[100vw] flex justify-center">
             <Contact />
           </section>
-          <button
+          {/* <button
           className="fixed bottom-4 right-4 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-700 transition-all"
           onClick={openModal}
         >
           Open Mortgage Calculator
-        </button>
+        </button> */}
 
         {/* Modal */}
         {isModalOpen && (
