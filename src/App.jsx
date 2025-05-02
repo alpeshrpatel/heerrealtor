@@ -12,6 +12,7 @@ import Navbar from "./sections/Navbar";
 import MissionVision from "./sections/MissionVision";
 import MortgageCalculatorWidget from "./sections/MortgageCalculatorWidget";
 import MortgageCalculator from "./sections/MorgageCalculator";
+import { Bounce, ToastContainer } from "react-toastify";
 
 
 
@@ -101,6 +102,20 @@ function App() {
             <MortgageCalculatorWidget />
           </section> */}
         </div>
+
+        <ToastContainer
+              position="bottom-center"
+              autoClose={2000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+              transition={Bounce}
+            />
         
       </div>
     </>

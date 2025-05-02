@@ -1,35 +1,203 @@
 import React, { useState } from "react";
 import SectionTitle from "../components/SectionTitle";
+import { toast } from "react-toastify";
+
+const APP_ID = 3;
+const API_TOKEN = 'a1b2c3d4-e5f6-7g8h-9i0j-k1l2m3n4o5p6';
+const ADMIN_EMAIL = 'dipakkarmur45@gmail.com';
 
 const Contact = () => {
-  const [email,setEmail] = useState('');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+
+  const headers = {
+    "X-API-Token": API_TOKEN,
+    "app-id": APP_ID
+  };
 
   const handleSend = async (e) => {
     e.preventDefault()
     try {
-        const res = await fetch("/api/sendemail/getintouch/heerrealtor", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email }),
-        });
-  
-        if (!res.ok) {
-          throw new Error(`Email Subscription Failed: ${res.status} - ${res.statusText}`);
-        }
-  
-        const result = await res.json();
-  
-        if (res.status === 200) {
-          alert("success", "Subscribed!");
-        }
-      
+      // const res = await fetch("/api/sendemail/getintouch/heerrealtor", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ email }),
+
+      // });
+      setLoading(true);
+      const res = await fetch(
+        `http://127.0.0.1:8000/api/send/email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Token": API_TOKEN,
+          "app-id": APP_ID
+        },
+        body: JSON.stringify(
+          {
+            app_id: APP_ID,
+            sender: ADMIN_EMAIL,
+            sender_name: "HeerRealtor",
+            recipients: [
+              {
+                email: email,
+                name: name,
+              }
+            ],
+            content: {
+              subject: "Welcome to HeerRealtor! 🏡 Your Dream Home Awaits!",
+              body_text: `
+            Hi there,  
+          
+          Thank you for connecting with HeerRealtor! 🌟  
+          
+          We’re thrilled to have you on board and are here to help you find the perfect property. Whether you're buying, selling, or investing, we've got exclusive listings, expert insights, and personalized guidance just for you.  
+          
+          Here's what you can expect:  
+          - 🏡 Access to premium property listings  
+          - 📈 Market updates and real estate trends  
+          - 🤝 Personalized assistance from our expert team  
+          
+          Stay tuned for the latest listings and updates. If you have any questions, feel free to reach out—we’re happy to help!  
+          
+          Best regards,  
+           
+          HeerRealtor  
+          Your trusted partner in real estate  
+          https://heerrealtor.com
+          `,
+              body_html: `
+            <p>Hi <b>there</b>,</p>  
+          
+          <p>Thank you for connecting with <b>HeerRealtor</b>! 🌟</p>  
+          
+          <p>We’re thrilled to have you on board and are here to help you find the perfect property. Whether you're buying, selling, or investing, we’ve got exclusive listings, expert insights, and personalized guidance just for you.</p>  
+          
+          <p>Here's what you can expect:</p>  
+          <ul>  
+            <li>🏡 Access to premium property listings</li>  
+            <li>📈 Market updates and real estate trends</li>  
+            <li>🤝 Personalized assistance from our expert team</li>  
+          </ul>  
+          
+          <p>Stay tuned for the latest listings and updates. If you have any questions, feel free to reach out—we’re happy to help!</p>  
+          
+          <p>Best regards,<br/>  
+          <p>Team HeerRealtor</p>
+         <hr style="margin: 30px 0;" />
+
+      <div style="font-size: 13px; color: #888; text-align: center;">
+        <img src="https://heerrealtor.com/logo4.png" alt="HeerRealtor Logo" width="120" style="margin-bottom: 10px;" />
+        <p><b>HeerRealtor</b><br/>
+        Your trusted partner in real estate<br/>
+        <a href="https://heerrealtor.com" style="color: #4CAF50; text-decoration: none;">www.heerrealtor.com</a></p>
+      </div>
+            `,
+            },
+
+          })
+      }
+      )
+      const response = await fetch(
+        `http://127.0.0.1:8000/api/send/email`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Token": API_TOKEN,
+          "app-id": APP_ID
+        },
+        body: JSON.stringify(
+          {
+            app_id: APP_ID,
+            sender: ADMIN_EMAIL,
+            sender_name: "HeerRealtor",
+            recipients: [
+              {
+                email: ADMIN_EMAIL,
+                name: 'HeerRealtor',
+              }
+            ],
+            content: {
+              subject: `New Contact Message from ${name}`,
+              body_text: `
+            Hi Admin,
+            
+            You've received a new message from the Contact Us page on your website.
+            
+            Details:
+            - Name: ${name}
+            - Email: ${email}
+            - Subject: ${subject}
+            
+            Message:
+            ${message}
+            
+            Please respond to the user at your earliest convenience.
+            
+            Best regards,  
+            
+          HeerRealtor  
+          Your trusted partner in real estate  
+          https://www.heerrealtor.com
+              `,
+              body_html: `
+            <p>Hi <b>Admin</b>,</p>
+            
+            <p>You've received a new message from the <b>Contact Us</b> page on your website.</p>
+            
+            <p><b>Details:</b></p>
+            <ul>
+              <li><b>Name:</b> ${name}</li>
+              <li><b>Email:</b> ${email}</li>
+              <li><b>Subject:</b> ${subject}</li>
+            </ul>
+            
+            <p><b>Message:</b></p>
+            <blockquote style="border-left: 4px solid #4CAF50; padding-left: 10px; color: #333;">
+              ${message}
+            </blockquote>
+            
+            <p>Please respond to the user at your earliest convenience.</p>
+            
+            <p>Best regards,<br/>
+            <p>Team HeerRealtor</p>
+              <hr style="margin: 30px 0;" />
+
+      <div style="font-size: 13px; color: #888; text-align: center;">
+        <img src="https://www.heerrealtor.com/logo4.png" alt="HeerRealtor Logo" width="120" style="margin-bottom: 10px;" />
+        <p><b>HeerRealtor</b><br/>
+        Your trusted partner in real estate<br/>
+        <a href="https://www.heerrealtor.com" style="color: #4CAF50; text-decoration: none;">www.heerrealtor.com</a></p>
+      </div>
+              `
+            }
+
+
+          })
+      }
+      )
+      if (!res.ok) {
+        throw new Error(`Email Subscription Failed: ${res.status} - ${res.statusText}`);
+      }
+
+      const result = await res.json();
+
+      if (res.status === 200 && response.status === 200) {
+        toast.success("Your message Recieved, we will contact you soon!");
+      }
+      setLoading(false);
     } catch (error) {
       console.error("Subscription Error:", error);
+      toast.error("Error sending message. Please try again later.");
       // alert(error);
+      setLoading(false);
     }
-    
+    setLoading(false);
   }
   return (
     <div
@@ -46,12 +214,12 @@ const Contact = () => {
       <div className="flex flex-col lg:flex-row mt-10 space-y-4 lg:space-y-0 lg:space-x-4">
         <div
           className="flex-[0.9] p-6 h-auto  "
-          
+
         >
           <div className="space-y-8">
             <div
               className="flex items-center group"
-              
+
             >
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-sky-50 text-sky-500 text-xl mr-4 group-hover:bg-sky-500 group-hover:text-white transition duration-300">
                 <i className="bi bi-geo-alt"></i>
@@ -59,13 +227,13 @@ const Contact = () => {
               <div>
                 <h3 className="text-lg font-semibold">Address</h3>
                 <p className="text-gray-600">
-                1774 E SAN CARLOS PL , CHANDLER, AZ - 85249
+                  1774 E SAN CARLOS PL , CHANDLER, AZ - 85249
                 </p>
               </div>
             </div>
             <div
               className="flex items-center group"
-              
+
             >
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-sky-50 text-sky-500 text-xl mr-4 group-hover:bg-sky-500 group-hover:text-white transition duration-300">
                 <i className="bi bi-telephone"></i>
@@ -77,7 +245,7 @@ const Contact = () => {
             </div>
             <div
               className="flex items-center group"
-             
+
             >
               <div className="rounded-full w-12 h-12 flex items-center justify-center bg-sky-50 text-sky-500 text-xl mr-4 group-hover:bg-sky-500 group-hover:text-white transition duration-300">
                 <i className="bi bi-envelope"></i>
@@ -87,19 +255,19 @@ const Contact = () => {
                 <p className="text-gray-600">realtor.heer.p@gmail.com</p>
               </div>
             </div>
-           
+
           </div>
         </div>
 
         <div
           className="flex-[1.3] bg-white p-8 h-auto "
-          
+
         >
           <form className="space-y-4">
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <div
                 className="MainPage"
-               
+
               >
                 <label className="block text-black mb-1" htmlFor="name">
                   Your Name
@@ -107,12 +275,14 @@ const Contact = () => {
                 <input
                   type="text"
                   id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full p-2 border border-gray-300"
                 />
               </div>
               <div
                 className="MainPage"
-               
+
               >
                 <label className="block text-black mb-1" htmlFor="email">
                   Your Email
@@ -127,7 +297,7 @@ const Contact = () => {
               </div>
             </div>
             <div
-             
+
             >
               <label className="block text-black mb-1" htmlFor="subject">
                 Subject
@@ -135,30 +305,45 @@ const Contact = () => {
               <input
                 type="text"
                 id="subject"
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
                 className="w-full p-2 border border-gray-300"
               />
             </div>
             <div
-              
+
             >
               <label className="block text-black mb-1" htmlFor="message">
                 Message
               </label>
               <textarea
                 id="message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 className="w-full p-2 border border-gray-300 h-40 overflow-hidden"
               ></textarea>
             </div>
             <div
               className="text-center"
-             
+
             >
               <button
                 // type="submit"
-                className="bg-blue-500 rounded-full text-white py-2 px-4 hover:bg-blue-600"
+                className={`bg-blue-500 rounded-full text-white py-2 px-4 hover:bg-blue-600 ${loading ? "cursor-not-allowed" : ""}`}
+                disabled={loading}
                 onClick={(e) => handleSend(e)}
               >
-                Send Message
+                {loading ? (
+                  <div className="flex items-center justify-center">
+                    {/* <svg
+                      className="animate-spin h-5 w-5 mr-3 text-white"
+                      viewBox="0 0 24 24"
+                    ></svg> */}
+                    Sending...
+                  </div>
+                ) : (
+                  "Send Message"
+                )}
               </button>
             </div>
           </form>
