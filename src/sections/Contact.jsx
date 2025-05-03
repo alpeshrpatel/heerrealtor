@@ -31,7 +31,7 @@ const Contact = () => {
       // });
       setLoading(true);
       const res = await fetch(
-        `http://127.0.0.1:8000/api/send/email`, {
+        `http://147.79.66.76/api/send/email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const Contact = () => {
       }
       )
       const response = await fetch(
-        `http://127.0.0.1:8000/api/send/email`, {
+        `http://147.79.66.76/api/send/email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
