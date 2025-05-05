@@ -31,7 +31,7 @@ const Contact = () => {
       // });
       setLoading(true);
       const res = await fetch(
-        `https://api.heerrealtor.com/api/send/email`, {
+        `https://api.communication.gotestli.com/api/send/email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -104,7 +104,7 @@ const Contact = () => {
       }
       )
       const response = await fetch(
-        `https://api.heerrealtor.com/api/send/email`, {
+        `https://api.communication.gotestli.com/api/send/email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -188,6 +188,10 @@ const Contact = () => {
       const result = await res.json();
 
       if (res.status === 200 && response.status === 200) {
+        setName("");
+        setEmail("");
+        setSubject("");
+        setMessage("");
         toast.success("Your message Recieved, we will contact you soon!");
       }
       setLoading(false);
