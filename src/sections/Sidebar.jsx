@@ -5,6 +5,7 @@ import { BsCalculatorFill } from "react-icons/bs";
 import Images from "../assets/Images";
 import HddStack from "../assets/HddStack";
 import Envelope from "../assets/Envelope";
+import CalculatorsDropdown from "../components/calculators/CalculatorsDropdown";
 
 const Sidebar = ({ setIsSidebarOn,setIsModalOpen }) => {
   return (
@@ -58,7 +59,7 @@ const Sidebar = ({ setIsSidebarOn,setIsModalOpen }) => {
         <li  className="group flex justify-center items-center gap-1 lg:w-14 lg:h-14 lg:rounded-full rounded-full py-4 px-10 lg:py-4 lg:px-4 lg:hover:w-auto lg:hover:h-auto lg:hover:py-4 lg:hover:px-10   bg-[#03233F] text-white hover:text-white transition duration-300">
           <button
             className="flex items-center gap-1"
-            onClick={() => setIsModalOpen(true)}
+            // onClick={() => setIsModalOpen(true)}
           >
             {/* <FileEarmarkText/>
            <span className="lg:hidden lg:group-hover:inline">
