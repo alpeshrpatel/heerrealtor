@@ -55,7 +55,7 @@ const Navbar = ({ isSidebarOn, setIsSidebarOn,handleBurgerClick,setIsModalOpen})
                 href="#about"
                 className="hover:text-[#5998C9] transition-colors duration-300 text-xl"
               >
-                About Hiral
+                About Heer
               </a>
             </li>
             

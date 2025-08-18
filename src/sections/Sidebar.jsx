@@ -33,7 +33,7 @@ const Sidebar = ({ setIsSidebarOn,setIsModalOpen }) => {
         >
           <a href="#about" className="flex items-center gap-1">
             <Person />
-            <span className="lg:hidden lg:group-hover:inline">About Hiral</span>
+            <span className="lg:hidden lg:group-hover:inline">About Heer</span>
           </a>
         </li>
         <li
