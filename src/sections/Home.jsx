@@ -7,6 +7,26 @@ import { RiLinkedinBoxFill } from "react-icons/ri";
 import { FiMail, FiPhone } from "react-icons/fi";
 
 const Home = () => {
+ 
+
+const openEmail = (email) => {
+  try {
+   
+    const mailtoLink = `mailto:${email}`;
+    
+   
+    window.location.href = mailtoLink;
+    
+    // Method 2: If that doesn't work, try opening in new window
+    //  window.open(mailtoLink, '_self');
+  } catch (error) {
+    console.error('Failed to open email client:', error);
+    // Fallback: copy email to clipboard
+    navigator.clipboard.writeText(email);
+    alert(`Email copied to clipboard: ${email}`);
+  }
+};
+
   return (
     <div id="home" style={{ margin: 0, padding: 0 }}>
       <div className=" h-screen w-full relative flex items-center justify-center ">
@@ -64,15 +84,35 @@ const Home = () => {
                 +1 480-310-9980
               </a>
             </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
+            {/* <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
               <a 
               href="mailto:homes@heerrealtor.com" 
               className="flex items-center gap-2 hover:text-sky-600 transition-colors duration-300"
             >
               <FiMail size={24} className="text-sky-600" />
               <span className="text-sm lg:text-lg font-medium">homes@heerrealtor.com</span>
+             
+              
             </a>
+            </div> */}
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 flex items-center gap-4">
+              <FiMail size={24} className="text-sky-600" />
+              <div className="flex flex-col gap-2">
+                <button
+                  onClick={() => openEmail('homes@heerrealtor.com')}
+                  className="text-sm lg:text-lg font-medium hover:text-sky-600 transition-colors duration-300 cursor-pointer text-left p-0 bg-transparent border-none"
+                >
+                  homes@heerrealtor.com
+                </button>
+                <button
+                  onClick={() => openEmail('realtor.heer.p@gmail.com')}
+                  className="text-sm lg:text-lg font-medium hover:text-sky-600 transition-colors duration-300 cursor-pointer text-left p-0 bg-transparent border-none"
+                >
+                  realtor.heer.p@gmail.com
+                </button>
+              </div>
             </div>
+            
             {/* similar for email */}
           </div>
         </div>
