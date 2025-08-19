@@ -4,17 +4,18 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { MdFacebook } from "react-icons/md";
 import { IoLogoInstagram } from "react-icons/io";
 import { RiLinkedinBoxFill } from "react-icons/ri";
+import { FiMail, FiPhone } from "react-icons/fi";
 
 const Home = () => {
   return (
     <div id="home" style={{ margin: 0, padding: 0 }}>
       <div className=" h-screen w-full relative flex items-center justify-center ">
-      <div className="basis-1/3 hidden lg:flex justify-center absolute left-10 z-10 ">
-            <img
-              src="/hiralphoto.png"
-              alt=""
-              className="h-auto w-[80vw] md:h-auto md:w-[50vw] lg:h-auto lg:w-[20vw] justify-center ml-20 rounded-md"
-            />
+        <div className="basis-1/3 hidden lg:flex justify-center absolute left-10 z-10 ">
+          <img
+            src="/hiralphoto.png"
+            alt=""
+            className="h-auto w-[80vw] md:h-auto md:w-[50vw] lg:h-auto lg:w-[20vw] justify-center ml-20 rounded-md"
+          />
         </div>
         <div className="opacity-25  h-screen">
           <img src="/home.jpg" alt="image" className="w-[100vw] h-full " />
@@ -34,9 +35,9 @@ const Home = () => {
                 1000, // Wait for 1 second before retyping
               ]}
               wrapper="span"
-              speed={20} 
+              speed={20}
               deletionSpeed={90}
-              repeat={Infinity} 
+              repeat={Infinity}
               className="border-b-[2px] border-sky-600"
             />
           </div>
@@ -55,6 +56,24 @@ const Home = () => {
             <a href="https://www.linkedin.com/in/heer-realtor/" target="/_blank" className="p-4">
               <RiLinkedinBoxFill size={22} className="hover:text-blue-500" />
             </a>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
+              <FiPhone size={24} className="text-sky-600" />
+              <a href="tel:+14803109980" className="text-[#363637] hover:text-sky-600">
+                +1 480-310-9980
+              </a>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-lg p-3 flex items-center gap-2">
+              <a 
+              href="mailto:homes@heerrealtor.com" 
+              className="flex items-center gap-2 hover:text-sky-600 transition-colors duration-300"
+            >
+              <FiMail size={24} className="text-sky-600" />
+              <span className="text-sm lg:text-lg font-medium">homes@heerrealtor.com</span>
+            </a>
+            </div>
+            {/* similar for email */}
           </div>
         </div>
       </div>
